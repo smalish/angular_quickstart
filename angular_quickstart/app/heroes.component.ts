@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit{
 	selectedHero: Hero;
 
 	constructor(
-    private router: Routes,
+    private router: Router,
     private heroService: HeroService) { }
 
   	getHeroes(): void {
