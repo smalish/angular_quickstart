@@ -20,7 +20,7 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+            .then(function (heroes) { return _this.heroes = heroes.slice(0, 5); });
     };
     DashboardComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;

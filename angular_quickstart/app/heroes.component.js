@@ -26,6 +26,14 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
+    HeroesComponent.prototype.add = function (name) {
+        var _this = this;
+        this.heroService.add(name)
+            .then(function (hero) {
+            _this.heroes.push(hero);
+            _this.selectedHero = null;
+        });
+    };
     HeroesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

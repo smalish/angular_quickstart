@@ -33,6 +33,14 @@ export class HeroesComponent implements OnInit{
 	  	this.selectedHero = hero;
 	}
 
+  add(name: String): void {
+    this.heroService.add(name)
+    .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
+
 
 }
 
