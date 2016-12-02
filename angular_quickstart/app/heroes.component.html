@@ -1,10 +1,12 @@
 <h2>My Heroes</h2>
 
-<button (click)="add('yangying')" >新增</button>
+<label>hero name :</label><input #heroName />
+<button (click)="add(heroName.value); heroName.value='';" >新增</button>
 
 <ul class="heroes">
   	<li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
   		<span class="badge">{{hero.id}}</span> {{hero.name}}
+  		<button class="deleteBtn" (click) = "delete(hero);">删除</button>
 	</li>
 </ul>
 

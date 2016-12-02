@@ -42,7 +42,7 @@ export class HeroDetailComponent implements OnInit {
 	    	.then(() => this.goBack());
 	}
 
-	delete(): void{
+	delete(): void {
 		this.heroService.delete(this.hero)
 			.then(() => this.goBack());
 	}

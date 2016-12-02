@@ -28,10 +28,24 @@ var HeroesComponent = (function () {
     };
     HeroesComponent.prototype.add = function (name) {
         var _this = this;
+        if (!name.trim()) {
+            alert('新增hero name不可为空');
+            return;
+        }
         this.heroService.add(name)
             .then(function (hero) {
             _this.heroes.push(hero);
             _this.selectedHero = null;
+        });
+    };
+    HeroesComponent.prototype.delete = function (hero) {
+        var _this = this;
+        this.heroService.delete(hero)
+            .then(function () {
+            _this.heroes = _this.heroes.filter(function (h) { return h != hero; });
+            if (_this.selectedHero == hero) {
+                _this.selectedHero = null;
+            }
         });
     };
     HeroesComponent = __decorate([
